@@ -12,12 +12,12 @@ stages:
 
 jobs:
   include:
-    - name: Java 6
-      env: JDK=openjdk6
+    - name: Java 11
+      env: JDK=openjdk11
       addons:
         apt:
           packages:
-            - openjdk-6-jdk
+            - openjdk-11-jdk
       install:
         # Download dependencies with JDK 8 because Mave Central supports
         # TLS 1.2 only but OpenJDK 6 does not.
@@ -45,7 +45,7 @@ jobs:
       addons:
         apt:
           packages:
-            - openjdk-6-jdk
+            - openjdk-11-jdk
       install:
         # Download dependencies with JDK 8 because Mave Central supports
         # TLS 1.2 only but OpenJDK 6 does not.
@@ -59,7 +59,7 @@ jobs:
         - jdk_switcher use openjdk6
         - ./mvnw --version
       env:
-        - JDK=openjdk6
+        - JDK=openjdk11
         # OSSRH_USERNAME
         - secure: griGZYDtqDMRUaYex/uAnpkWIQ/yodM6IOn4G8izWKpyGLeCxyXBG0FDcVo81xRq/9mMevj2idyW/xNP/HAQ45G4pyJUk/vTSMkNslzVjr7OBEtQQCN8XahSaOO0l0CJ5lzA6LdwWg7uDaf9znqZ0slt81u0S1NJmUZyYeUEim0=
         # OSSRH_PASSWORD
